@@ -1,0 +1,803 @@
+@import "./_font.scss";
+@import "./_typography.scss";
+@import "./_global.scss";
+@import "./_utils.scss";
+
+$blueColor: #2D66EE;
+$fontSFProText: "SF Pro Text";
+$fontSFProDisplay: "SF Pro Display";
+
+@mixin fontCharacteristic($fsize,
+$fweight, $lineheight, $letterspacing) {
+    font-size: $fsize;
+    font-weight: $fweight;
+    line-height: $lineheight;
+    letter-spacing: $letterspacing;
+}
+
+@mixin setPaddingMargin ($padding, $margin) {
+    padding: $padding;
+    margin: $margin;
+}
+
+.block-header {
+    width: 1224px;
+    margin: 0 auto;
+}
+
+.main-header {
+    width: 1124px;
+    background-color: #fff;
+    position: fixed;
+    top: 24px;
+    border-radius: 12px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.08);
+    padding: 16px 24px;
+    z-index: 10;
+}
+
+.header-tablet-mobile {
+    display: none;
+}
+
+.header-navigation {
+    display: flex;
+    gap: 80px;
+    justify-content: space-between;
+}
+
+.three-line-open-menu,
+.view-mobile,
+.view-tablet {
+    display: none;
+}
+
+.icon-header {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+.header-logo {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $blueColor;
+    @include fontCharacteristic(20px, 700, 18px, -0.154px);
+    width: 120px;
+}
+
+.header-links {
+    display: flex;
+    list-style-type: none;
+    font-family: $fontSFProText;
+    @include fontCharacteristic(14px, 500, 18px, -0.154px);
+    gap: 24px;
+    @include setPaddingMargin(0, 0);
+}
+
+.header-links li {
+    display: flex;
+    @include setPaddingMargin(0, auto 0);
+}
+
+.header-links-black {
+    text-decoration: none;
+    color: #101828;
+    margin: auto 0;
+}
+
+.blue-text {
+    color: $blueColor;
+}
+
+.header-links-blue {
+    gap: 0;
+    .links-telephone-1 {
+        margin-right: 16px;
+    }
+
+    .links-telephone-2 {
+        margin-right: 32px;
+    }
+}
+
+.start-block {
+    height: 900px;
+    margin: 0 auto;
+}
+
+@keyframes moveUp {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 0 300%;
+    }
+}
+
+@keyframes moveDown {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 0 -300%;
+    }
+}
+
+.block-background {
+    margin-left: 51%;
+}
+
+.background-start-image {
+    position: absolute;
+    width: 900px;
+    height: 1100px;
+    z-index: 0;
+    display: flex;
+    top: -100px;
+    gap: 70px;
+    overflow: hidden;
+    transform: rotate(-12deg);
+
+    .background-start-left {
+        width: 515px;
+        height: 2640px;
+        background: url(/src/assets/img/background-start-left.webp) repeat-y;
+        animation: moveUp 25s linear infinite;
+        position: relative;
+        overflow: hidden;
+        background-size: 515px;
+    }
+
+    .background-start-right {
+        width: 450px;
+        height: 2640px;
+        right: 80px;
+        background: url(/src/assets/img/background-start-right.webp) repeat-y;
+        background-size: 295px;
+        animation: moveDown 25s infinite linear;
+        position: relative;
+        overflow: hidden;
+    }
+}
+
+.main-text-block {
+    padding-top: 160px;
+    width: 600px;
+}
+
+.block-form {
+    width: 676px;
+    padding: 24px;
+    background-color: #fff;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.16), 0px 0px 2px 0px rgba(0, 0, 0, 0.08);
+}
+
+.form-contacts {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    input {
+        width: 224px;
+        font-family: $fontSFProText;
+        font-size: 17px;
+        border: 0px;
+        border-bottom: 0.7px solid #D0D5DD;
+        outline: none;
+        @include setPaddingMargin(8px 0px, 0);
+    }
+}
+
+.form-button {
+    background-color: $blueColor;
+    color: #fff;
+    font-family: $fontSFProText;
+    @include fontCharacteristic(14px, 600, 18px, -0.154px);
+    width: 132px;
+    border: 0px;
+    border-radius: 8px;
+    text-align: left;
+    @include setPaddingMargin(11px 24px, 0);
+}
+
+.development-info {
+    display: flex;
+    gap: 128px;
+    padding: 80px 0px;
+}
+
+.development-info-text {
+    width: 600px;
+
+    h3 {
+        font-family: $fontSFProDisplay;
+        @include fontCharacteristic(20px, 600, 24px, 0.38px);
+        @include setPaddingMargin(0, 0);
+    }
+}
+
+.development-paragraph {
+    font-family: $fontSFProText;
+    @include fontCharacteristic(15px, 500, 20px, -0.24px);
+    @include setPaddingMargin(0, 0);
+    margin-top: 32px;
+    margin-bottom: 34px;
+}
+
+.development-web-mobile {
+    font-family: $fontSFProText;
+    @include fontCharacteristic(17px, 400, 22px, -0.408px);
+    @include setPaddingMargin(0, 0);
+    margin-top: 16px;
+}
+
+.web-mobile-first {
+    margin-bottom: 32px;
+}
+
+.development-info-list {
+    width: 233px;
+    font-family: $fontSFProDisplay;
+    @include fontCharacteristic(20px, 400, 24px, 0.38px);
+}
+
+.info-list {
+    @include setPaddingMargin(0, 0);
+    list-style-type: none;
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    li {
+        display: flex;
+        gap: 12px;
+    }
+
+    a {
+        text-decoration: none;
+        color: #1D2939;
+        @include setPaddingMargin(0, auto 0);
+
+        &:hover {
+            color: #101828;
+            font-weight: 600;
+            margin-bottom: 4px;
+            border-bottom: 1px $blueColor solid;
+        }
+    }
+}
+
+.icon-list-arrow {
+    width: 24px;
+    height: 24px;
+    @include setPaddingMargin(0, auto 0);
+}
+
+.project-block {
+    padding-top: 80px;
+    padding-bottom: 60px;
+
+    h2 {
+        width: 600px;
+    }
+
+    .projects-lists {
+        margin-top: 28px;
+    }
+
+    .project-list-icon {
+        width: 44px;
+        height: 44px;
+    }
+
+    ul {
+        list-style-type: none;
+        @include setPaddingMargin(0, 0);
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 15px;
+        font-family: "SF Pro Text";
+        height: 280px;
+
+        li {
+            display: flex;
+            gap: 16px;
+            @include fontCharacteristic(17px, 500, 22px, -0.408px);
+            width: 401px;
+
+            p {
+                margin: auto 0;
+            }
+        }
+    }
+}
+
+.project-one {
+    padding: 60px 0px;
+    background: url(/src/assets/img/iteka-phone.png) no-repeat;
+    background-position: right top 330px;
+
+    .project-one-subtitle {
+        margin-bottom: 58px;
+    }
+
+    .project-iteka-list {
+        margin-top: 0px;
+        display: flex;
+        gap: 162px;
+
+        ul {
+            @include setPaddingMargin(0, 0);
+            list-style-type: none;
+            display: flex;
+            gap: 1px;
+
+            li {
+                font-family: "SF Pro Text";
+                font-style: normal;
+                @include fontCharacteristic(17px, 400, 22px, -0.408px);
+                padding: 16px;
+
+                .iteka-list-link {
+                    color: #000;
+                    text-decoration: none;
+                }
+
+                .link-current {
+                    font-weight: 500;
+                    border-bottom: 2px solid $blueColor;
+                    padding-bottom: 4px;
+                }
+            }
+        }
+
+        .iteka-list-button {
+            width: 207px;
+            color: #fff;
+            @include setPaddingMargin(11px 24px, auto 0);
+            text-decoration: none;
+            background-color: $blueColor;
+            border-radius: 8px;
+            font-family: "SF Pro Text";
+            @include fontCharacteristic(14px, 600, 18px, -0.154px);
+        }
+    }
+}
+
+.project-iteka-desc {
+    margin-top: 44px;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    .iteka-desc {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        p, ul {
+            margin: 0;
+            font-family: "SF Pro Text";
+        }
+
+        .iteka-desc-text {
+            @include fontCharacteristic(15px, 400, 20px, -0.24px);
+        }
+
+        .iteka-enum {
+            @include fontCharacteristic(17px, 400, 22px, -0.408);
+            color: #475467;
+        }
+
+        .iteka-list-contacts {
+            @include fontCharacteristic(15px, 400, 20px, -0.24px);
+            padding: 0;
+            list-style-type: none;
+            display: flex;
+            gap: 32px;
+            color: #101828;
+
+            li {
+                display: flex;
+                gap: 8px;
+                align-items: center;
+            }
+
+            .icon-iteka {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        .list-analysis {
+            display: flex;
+            gap: 48px;
+        
+            .iteka-number-info {
+                color: #101828;
+                font-family: "Inter";
+                @include fontCharacteristic(24px, 700, 144%, 0.326px);
+            }
+        
+            .iteka-number-text {
+                font-family: "SF Pro Text";
+                @include fontCharacteristic(13px, 400, 16px, -0.078px);
+                color: #667085;
+            }
+        
+            li {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                align-items: start;
+            }
+        }
+
+        .iteka-ios-google {
+            padding: 0;
+            list-style-type: none;
+            display: flex;
+            gap: 16px;
+
+            .iteka-ios-link {
+                width: 148px;
+            }
+
+            .iteka-android-link {
+                width: 136px;
+            }
+        }
+    }
+}
+
+.block-your-projects {
+    display: flex;
+    gap: 24px;
+    padding: 80px 0px;
+
+    .your-projects-text {
+        width: 600px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        p {
+            margin: 0;
+            font-family: "SF Pro Text";
+            @include fontCharacteristic(15px, 500, 20px, -0.154px);
+        }
+    }
+
+    .your-projects-form-block {
+        width: 600px;
+
+        .form-your-project {
+            flex-wrap: wrap;
+            justify-content: end;
+
+            label {
+                color: #667085;
+                display: flex;
+                flex-direction: column;
+                padding: 12px 0px;
+            }
+
+            input {
+                width: 264px;
+                padding-bottom: 8px;
+            }
+
+            .button-your-projects {
+                width: 178px;
+            }
+        }
+    }
+}
+
+.development-block {
+    padding: 80px 0px;
+    padding-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+
+    .development-applications {
+        height: 585px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        row-gap: 4px;
+        column-gap: 440px;
+
+        .icon-development {
+            width: 48px;
+            height: 48px;
+        }
+
+        .application-text {
+            width: 392px;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0px 2px 24px 0px rgba(0, 0, 0, 0.08), 0px 0px 2px 0px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            height: 172px;
+
+            &:not(:first-child) {
+                margin-bottom: 20px;
+            }
+
+            &:nth-child(1) {
+                height: 192px;
+                background: url(/src/assets/img/develop-background-1.png) no-repeat;
+                background-size: auto 100%;
+                background-position: right;
+            }
+
+            &:nth-child(2) {
+                background: url(/src/assets/img/develop-background-2.png) no-repeat;
+                background-size: auto 100%;
+                background-position: right;
+            }
+
+            &:nth-child(3) {
+                background: url(/src/assets/img/develop-background-3.png) no-repeat;
+                background-size: auto 100%;
+                background-position: right;
+            }
+
+            &:nth-child(4) {
+                background: url(/src/assets/img/develop-background-4.png) no-repeat;
+                background-size: auto 100%;
+                background-position: right;
+            }
+
+            &:nth-child(5) {
+                background: url(/src/assets/img/develop-background-5.png) no-repeat;
+                background-size: auto 100%;
+                background-position: right;
+            }
+
+            &:nth-child(6) {
+                background: url(/src/assets/img/develop-background-6.png) no-repeat;
+                background-size: auto 100%;
+                background-position: right;
+            }
+
+            h3 {
+                margin: 0;
+                display: flex;
+                gap: 24px;
+                align-items: center;
+            }
+
+            p {
+                @include fontCharacteristic(15px, 400, 20px, -0.24px);
+                margin: 0;
+            }
+        }
+    }
+}
+
+.our-team-block {
+    padding: 80px 0px;
+    display: flex;
+    gap: 21px;
+
+    .our-team-text {
+        width: 600px;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        p {
+            margin: 0;
+        }
+
+        .our-team-list {
+            @include setPaddingMargin(0, 8px 0px);
+            list-style-type: none;
+            display: flex;
+            gap: 16px;
+
+            li {
+                width: 184px;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            h3 {
+                @include fontCharacteristic(48px, 700, 144%, 0.326);
+                @include setPaddingMargin(0, 0);
+            }
+
+            p {
+                font-family: $fontSFProText;
+                @include fontCharacteristic(15px, 500, 20px, -0.24px);
+                @include setPaddingMargin(0, 0);
+                color: #667085;
+            }
+        }
+    }
+
+    .our-team-video {
+        margin: 5px 0px;
+        img {
+            width: 603px;
+        }
+    }
+}
+
+.block-book {
+    padding: 34px 0px;
+    display: flex;
+    gap: 152px;
+
+    .block-form-book {
+        margin-top: 46px;
+        width: 600px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        .your-projects-form-block {
+            width: 600px;
+
+            .form-book {
+                width: 552px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: end;
+                column-gap: 24px;
+                row-gap: 0px;
+
+                label {
+                    display: flex;
+                    flex-direction: column;
+                    width: 264px;
+                    padding: 16px 0px;
+
+                    input {
+                        width: 264px;
+                        padding-bottom: 8px;
+                    }
+                }
+
+                .label-email {
+                    width: 552px;
+
+                    input {
+                        width: 552px;
+                    }
+                }
+
+                .button-book {
+                    margin-top: 24px;
+                    padding: 11px 24px;
+                    width: 225px;
+                }
+            }
+        }
+
+        h2 {
+            color : #fff;
+        }
+    }
+
+    .form-book-image {
+        width: 343.848px;
+    }
+}
+
+.block-faq {
+    padding-top: 80px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    .faq-question-list {
+        list-style-type: none;
+        @include setPaddingMargin(0, 0);
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        height: 430px;
+        column-gap: 24px;
+
+        li {
+            width: 600px;
+            padding: 26px 0px;
+            border-bottom: 1px solid #D0D5DD;
+            border-top: 1px solid #D0D5DD;
+
+            h3 {
+                font-family: "SF Pro Display";
+                @include fontCharacteristic(20px, 600, 24px, 0.38px);
+                margin: 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            p {
+                margin: 0;
+                font-family: "SF Pro Text";
+                @include fontCharacteristic(16px, 400, 20px, -0.32px);
+                width: 524px;
+                margin-top: 21px;
+            }
+        }
+
+        .icon-plus {
+            width: 60px;
+            height: 60px;
+        }
+    }
+}
+
+.main-footer {
+    margin-bottom: 48px;
+    background-color: #101828;
+    color: #fff;
+    padding: 24px;
+    border-radius: 12px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.icon-footer {
+    width: 24px;
+    height: 24px;
+}
+
+.our-contacts-list {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    @include setPaddingMargin(0, 0);
+
+    h3 {
+        margin: 0;
+        font-family: $fontSFProText;
+        @include fontCharacteristic(14px, 500, 18px, -0.154px);
+        color: #aeaeae;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    li {
+        width: 294px;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+.footer-paragpraph {
+    font-family: $fontSFProText;
+    @include fontCharacteristic(13px, 400, 16px, -0.078px);
+    display: flex;
+    gap: 12px;
+    @include setPaddingMargin(0, 0 auto);
+}
+
+.icon-footer-carta {
+    width: 32px;
+    height: 16px;
+}

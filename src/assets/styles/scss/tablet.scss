@@ -1,0 +1,560 @@
+@import "./style.scss";
+
+$widthCenterBlock: 706px;
+
+@mixin setPaddingMargin ($padding, $margin) {
+    padding: $padding;
+    margin: $margin;
+}
+
+@mixin fontCharacteristic($fsize,
+$fweight, $lineheight, $letterspacing) {
+    font-size: $fsize;
+    font-weight: $fweight;
+    line-height: $lineheight;
+    letter-spacing: $letterspacing;
+}
+
+@media screen and (width < 1440px)
+{
+    .header-tablet-mobile {
+        position: absolute;
+        background-color: #fff;
+        z-index: 100;
+        width: 100%;
+        padding: 143px 0px;
+        
+        .menu-mobile-tablet {
+            display: flex;
+            flex-direction: column;
+            gap: 38px;
+
+            .nav-mobile-tablet-close {
+                background: none;
+                border: none;
+                padding: 0;
+                position: absolute;
+                margin-left: 80%;
+                top: 108px;
+
+                .icon-nav-close {
+                    width: 36px;
+                    height: 36px;
+                    margin: 12px;
+                }
+            }
+
+            .nav-header-logo {
+                font-size: 48px;
+                width: 289px;
+                height: 48px;
+                margin: 0 auto;
+            }
+
+            .nav-links-mobile-tablet {
+                @include setPaddingMargin(0, 0);
+                list-style-type: none;
+                display: flex;
+                flex-direction: column;
+                gap: 32px;
+                align-items: center;
+
+                a {
+                    text-decoration: none;
+                    color: #101828;
+                    @include fontCharacteristic(36px, 400, 144%, 0.326px);
+
+                }
+            }
+
+            .nav-links-telephone {
+                display: flex;
+                flex-direction: row;
+                gap: 32px;
+                list-style-type: none;
+                @include setPaddingMargin(0, 0);
+                margin-top: 15px;
+                align-self: center;
+
+                li {
+                    display: flex;
+                }
+
+                a {
+                    color: #2D66EE;
+                    font-family: "SF Pro Text";
+                    @include fontCharacteristic(18px, 500, 18px, -0.154);
+                }
+            }
+        }
+    }
+
+    .block-header {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .main-header {
+        width: 100%;
+        @include setPaddingMargin(25px 32px, 0);
+        top: 16px;
+    }
+
+    .paragraph-after-title {
+        width: 383px;
+    }
+
+    .header-navigation {
+        height: 40px;
+        gap: 0px;
+    }
+
+    .three-line-open-menu {
+        display: block;
+        @include setPaddingMargin(0, auto 0);
+        background: none;
+        border: none;
+        padding: 0;
+        margin-right: 233px;
+
+        svg {
+            width: 59px;
+            height: 40px;
+        }
+    }
+
+    .view-mobile, .view-dekstop {
+        display: none;
+    }
+
+    .view-tablet {
+        display: block;
+    }
+
+    .header-logo {
+        @include setPaddingMargin(0, auto 0);
+    }
+
+    .header-links {
+        padding: 0px;
+        margin-left: 118px;
+    }
+
+    .header-links-blue {
+        .links-telephone-1, .links-telephone-2  {
+            margin: 0;
+        }
+    }
+
+    .blocks-center {
+        width: 92%;
+    }
+
+    .block-background {
+        margin-left: 58.5%;
+    }
+
+    .start-block {
+        height: 762px;
+    }
+
+    .background-start-image {
+        width: 500px;
+        top: -100px;
+        gap: 50px;
+    
+        .background-start-left {
+            width: 235px;
+            animation: moveUp 60s linear infinite;
+            background-size: 235px;
+        }
+    
+        .background-start-right {
+            width: 235px;
+            right: 75px;
+            background-size: 145px;
+            animation: moveDown 60s infinite linear;
+        }
+    }
+
+    .main-text-block {
+        padding-top: 138px;
+        width: 55%;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        p {
+            margin: 0;
+            width: 100%;
+        }
+    }
+
+    .big-title {
+        font-size: 28px;
+    }
+
+    .block-form {
+        padding: 32px;
+        margin-top: 32px;
+        width: 55%;
+        position: relative;
+        z-index: 1;
+
+        h3 {
+            font-size: 16px;
+        }
+    }
+
+    .form-contacts {
+        width: 50%;
+        align-items: start;
+        flex-wrap: wrap;
+        margin: 0;
+        gap: 32px;
+
+        label {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        input {
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 22px;
+            letter-spacing: -0.408px;
+            border: 0px;
+            border-bottom: 0.7px solid #D0D5DD;
+            outline: none;
+            padding: 0px;
+            padding-bottom: 8px;
+        }
+    }
+
+    .form-button {
+        width: 155px;
+        text-align: left;
+        @include setPaddingMargin(11px 19px, 0);
+        padding-left: 24px;
+    }
+
+    .development-info {
+        gap: 7.5%;
+        padding: 32px 0px;
+        padding-bottom: 50px;
+    }
+
+    .development-web-mobile {
+        font-size: 14px;
+        width: 75%;
+    }
+
+    .development-info-text {
+        width: 50%;
+    }
+
+    .development-info-list {
+        width: 233px;
+        margin-top: 124px;
+        font-size: 20px;
+    }
+
+    .project-block {
+        padding: 45px 0px;
+
+        h2 {
+            width: 380px;
+        }
+
+        .projects-lists {
+            margin-top: 48px;
+        }
+
+        ul {
+            width: 92%;
+            height: 457px;
+
+            li {
+                width: 320px;
+            }
+        }
+    }
+
+    .project-one {
+        padding: 0px;
+        background-position: right top 383px;
+        background-size: 368.652px 225px;
+        height: 664px;
+
+        .project-one-subtitle {
+            font-size: 14px;
+            width: 65%;
+            margin-bottom: 26px;
+        }
+
+        .project-iteka-list {
+            display: flex;
+            flex-direction: column;
+            gap: 36px;
+            align-items: end;
+
+            ul {
+                gap: 0px;
+                width: 100%;
+                align-self: start;
+
+                li {
+                    padding: 15px;
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .project-iteka-desc {
+            position: relative;
+            top: -85px;
+            height: 399px;
+            width: 65%;
+
+            .iteka-desc {
+                gap: 33px;
+
+                .iteka-desc-text {
+                    font-size: 14px;
+                    width: 100%;
+                }
+    
+                .iteka-enum {
+                    font-size: 14px;
+                }
+    
+                .iteka-list-contacts {
+                    font-size: 14px;
+                    margin-left: 3px;
+                }
+
+                .list-analysis {
+                    .iteka-number-info {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    .block-your-projects {
+        flex-direction: column;
+        gap: 32px;
+        padding-top: 22px;
+        padding-bottom: 32px;
+
+        .your-projects-text {
+            width: 50%;
+            gap: 32px;
+
+            p {
+                font-size: 14px;
+            }
+        }
+
+        .your-projects-form-block {
+            margin: 0;
+            padding: 24px 24px;
+            width: 85%;
+
+            .form-your-project {
+                width: 100%;
+                
+                gap: 24px;
+
+                input {
+                    font-size: 17px;
+                }
+            }
+        }
+    }
+
+    .development-block {
+        padding: 32px 0px;
+        gap: 42px;
+
+        .development-applications {
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+
+            .application-text {
+                width: 97%;
+                padding-left: 26px;
+
+                &:not(:first-child) {
+                    margin-bottom: 0px;
+                }
+
+                &:nth-child(1) {
+                    height: 172px;
+                }
+
+                p {
+                    font-size: 14px;
+                    width: 70%;
+                }
+            }
+        }
+    }
+
+    .our-team-block {
+        padding: 38px 0px;
+        padding-bottom: 52px;
+        flex-direction: column;
+
+        .our-team-text {
+            width: 100%;
+
+            p {
+                font-size: 14px;
+                width: 57%;
+            }
+
+            .our-team-list {
+                margin-top: 472px;
+                margin-left: 32px;
+                width: 83%;
+                justify-content: space-between;
+
+                li {
+                    width: 185px;
+                }
+            }
+
+            .paragraph-our-team {
+                width: 82%;
+                margin-left: 32px;
+            }
+        }
+
+        .our-team-video {
+            position: absolute;
+            margin: 0 auto;
+            margin-top: 150px;
+
+
+            img {
+                width: 707px;
+                height: 392px;
+            }
+        }
+    }
+
+    .block-book {
+        padding-top: 76px;
+        padding-bottom: 88px;
+        gap: 22%;
+
+        .block-form-book {
+            margin: 0;
+            margin-left: 40px;
+            gap: 53px;
+            width: 100%;
+
+            h2 {
+                width: 455px;
+            }
+
+            .your-projects-form-block {
+                width: 74%;
+                margin: 0;
+
+                .form-book {
+                    width: 271px;
+                    justify-content: start;
+                    gap: 15px;
+
+                    input {
+                        font-size: 17px;
+                    }
+
+                    .label-email {
+                        width: 264px;
+    
+                        input {
+                            width: 264px;
+                        }
+                    }
+
+                    .button-book {
+                        margin-top: 17px;
+                    }
+                }
+            }
+        }
+
+        .form-book-image {
+            position: relative;
+            right: 220px;
+            top: 135px;
+
+            img {
+                width: 283px;
+            }
+        }
+    }
+
+    .block-faq {
+        padding-top: 22px;
+        padding-bottom: 35px;
+
+        .faq-question-list {
+            height: auto;
+            margin-left: 51px;
+            
+            li {
+                width: 90%;
+
+                p {
+                    width: 90%;
+                }
+            }            
+        }
+    }
+
+    .main-footer {
+        @include setPaddingMargin(0, 0);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        h2 {
+            margin-top: 46px;
+            font-size: 36px; 
+        }
+    }
+
+    .our-contacts-list {
+        padding: 0;
+        margin-left: 56px;
+        justify-content: space-between;
+
+        .our-contacts-list-mail {
+            width: 156px;
+            text-align: left;
+        }
+
+        .our-contacts-list-long {
+            width: 176px;
+            text-align: left;
+        }
+
+        p {
+            font-size: 14px;
+        }
+    }
+
+    .footer-paragpraph {
+        margin-bottom: 37px;
+    }
+}
